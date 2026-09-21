@@ -679,124 +679,123 @@ body {
 
 
 /* =========================================
-   CAKE
+   BARBIE BIRTHDAY CAKE 🎀
    ========================================= */
 
 .cake-container {
-    margin: 30px auto;
+    margin: 25px auto;
+    position: relative;
 }
 
 .cake {
     position: relative;
-
     width: 280px;
     height: 280px;
-
     margin: 0 auto;
 }
 
 
-/* Plate */
+/* -------------------------
+   Cake Plate
+   ------------------------- */
 
 .plate {
-    width: 300px;
+    width: 310px;
     height: 25px;
 
-    background:
-        linear-gradient(
-            180deg,
-            #ffffff,
-            #ffd5e7
-        );
-
     position: absolute;
-
-    bottom: 40px;
+    bottom: 38px;
     left: 50%;
 
     transform: translateX(-50%);
 
     border-radius: 50%;
 
+    background: linear-gradient(
+        180deg,
+        #ffffff,
+        #ffd6ea
+    );
+
     box-shadow:
-        0 5px 15px rgba(180, 30, 100, 0.25);
+        0 7px 12px rgba(190, 30, 110, 0.25),
+        0 0 15px rgba(255, 255, 255, 0.5);
 }
 
 
-/* Cake layers */
+/* -------------------------
+   Cake Layers
+   ------------------------- */
 
 .layer {
     position: absolute;
-
-    height: 60px;
-
-    border-radius:
-        50% / 25%;
 
     left: 50%;
 
     transform: translateX(-50%);
 
+    border-radius: 50% / 25%;
+
     box-shadow:
-        inset 0 -5px 8px rgba(150, 20, 90, 0.12),
-        0 4px 8px rgba(150, 20, 90, 0.12);
+        inset 0 -7px 10px rgba(180, 30, 100, 0.12),
+        0 5px 10px rgba(180, 30, 100, 0.15);
 }
 
 
-/* Bottom - hot pink */
+/* Bottom - HOT BARBIE PINK */
 
 .layer-bottom {
     bottom: 45px;
 
     width: 280px;
+    height: 60px;
 
-    background:
-        linear-gradient(
-            90deg,
-            #ff2f7d,
-            #ff4f98,
-            #ff75ad
-        );
+    background: linear-gradient(
+        90deg,
+        #ff2f7d,
+        #ff4f98,
+        #ff79b2
+    );
 }
 
 
-/* Middle - purple/pink */
+/* Middle - PURPLE/PINK */
 
 .layer-middle {
     bottom: 85px;
 
     width: 260px;
+    height: 60px;
 
-    background:
-        linear-gradient(
-            90deg,
-            #c56cff,
-            #e18cff,
-            #ff8fbd
-        );
+    background: linear-gradient(
+        90deg,
+        #b968ff,
+        #d88cff,
+        #f18bbb
+    );
 }
 
 
-/* Top - light Barbie pink */
+/* Top - BABY PINK */
 
 .layer-top {
     bottom: 125px;
 
     width: 240px;
+    height: 60px;
 
-    background:
-        linear-gradient(
-            90deg,
-            #ffb1d1,
-            #ffd0e2,
-            #ff9fc7
-        );
+    background: linear-gradient(
+        90deg,
+        #ff9fc8,
+        #ffc4dd,
+        #ff9fc8
+    );
 }
 
 
-/* =========================================
-   CAKE ICING
-   ========================================= */
+/* -------------------------
+   White Frosting
+   ------------------------- */
 
 .icing {
     position: absolute;
@@ -804,163 +803,159 @@ body {
     width: 240px;
     height: 35px;
 
-    background:
-        linear-gradient(
-            90deg,
-            #ffffff,
-            #fff3f9,
-            #ffffff
-        );
-
     bottom: 165px;
-
-    border-radius: 50% / 25%;
-
     left: 50%;
 
     transform: translateX(-50%);
 
+    border-radius: 50% / 25%;
+
+    background: linear-gradient(
+        90deg,
+        #ffffff,
+        #fff6fb,
+        #ffffff
+    );
+
     box-shadow:
-        inset 0 -3px 5px rgba(255, 100, 170, 0.15),
-        0 3px 10px rgba(255, 255, 255, 0.35);
+        inset 0 -4px 6px rgba(255, 100, 170, 0.12),
+        0 3px 10px rgba(255, 255, 255, 0.5);
 }
 
 
-/* Colored icing sprinkles */
+/* -------------------------
+   Frosting Drips
+   ------------------------- */
+
+.drip {
+    position: absolute;
+
+    width: 23px;
+    height: 32px;
+
+    top: -13px;
+
+    background: #ffffff;
+
+    border-radius: 50%;
+}
+
+.drip1 {
+    left: 38px;
+    display: block;
+    height: 27px;
+}
+
+.drip2 {
+    left: 108px;
+    height: 43px;
+}
+
+.drip3 {
+    left: 190px;
+    display: block;
+    height: 30px;
+}
+
+
+/* -------------------------
+   Colorful Sprinkles
+   ------------------------- */
 
 .icing::before {
     content: '';
 
     position: absolute;
 
-    left: 25px;
-    right: 25px;
-
+    left: 35px;
+    right: 35px;
     top: 13px;
 
-    height: 6px;
-
-    background:
-        repeating-linear-gradient(
-            90deg,
-            #ff4f98 0 8px,
-            transparent 8px 14px,
-            #c77dff 14px 22px,
-            transparent 22px 28px,
-            #ffd166 28px 36px,
-            transparent 36px 42px,
-            #5eead4 42px 50px,
-            transparent 50px 58px
-        );
+    height: 7px;
 
     border-radius: 10px;
 
-    opacity: 0.9;
+    background:
+        linear-gradient(
+            90deg,
+            #ff4f98 0 12%,
+            transparent 12% 17%,
+            #c77dff 17% 29%,
+            transparent 29% 34%,
+            #ffd166 34% 46%,
+            transparent 46% 51%,
+            #5eead4 51% 63%,
+            transparent 63% 68%,
+            #ff6fa8 68% 80%,
+            transparent 80% 85%,
+            #b968ff 85% 100%
+        );
 }
 
 
-/* =========================================
-   CAKE DRIPS
-   ========================================= */
-
-.drip {
-    position: absolute;
-
-    width: 25px;
-    height: 35px;
-
-    background: white;
-
-    border-radius: 50%;
-
-    top: -15px;
-}
-
-.drip1 {
-    left: 40px;
-
-    display: block;
-
-    height: 28px;
-}
-
-.drip2 {
-    left: 127px;
-
-    height: 45px;
-}
-
-.drip3 {
-    left: 210px;
-
-    display: block;
-
-    height: 30px;
-}
-
-
-/* =========================================
-   CANDLE
-   ========================================= */
+/* -------------------------
+   Candle
+   ------------------------- */
 
 .candle {
     position: absolute;
 
-    width: 14px;
-    height: 60px;
+    width: 15px;
+    height: 62px;
+
+    bottom: 190px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    border-radius: 6px 6px 0 0;
 
     background:
         repeating-linear-gradient(
             135deg,
             #ff3f87 0 8px,
-            #ffb4d5 8px 16px
+            #ffb6d5 8px 16px
         );
 
-    bottom: 190px;
-
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    border-radius: 5px 5px 0 0;
-
     box-shadow:
-        0 0 10px rgba(255, 80, 160, 0.4);
+        0 0 8px rgba(255, 70, 150, 0.4);
 }
 
 
-/* =========================================
-   FLAME
-   ========================================= */
+/* -------------------------
+   Candle Flame
+   ------------------------- */
 
 .flame {
     position: absolute;
 
-    width: 12px;
-    height: 18px;
+    width: 14px;
+    height: 20px;
 
-    background:
-        linear-gradient(
-            180deg,
-            #fff4b0,
-            #ffd166,
-            #ff9f43
-        );
-
-    top: -18px;
+    top: -20px;
+    left: 1px;
 
     border-radius:
         50% 50% 50% 50% /
         60% 60% 40% 40%;
 
-    animation:
-        flicker 1s infinite;
+    background: linear-gradient(
+        180deg,
+        #fffbd1,
+        #ffd166,
+        #ff9f43
+    );
+
+    animation: flicker 1s infinite;
 
     box-shadow:
         0 0 8px #ffd166,
-        0 0 15px #ffd166,
-        0 0 25px #ff9f43;
+        0 0 16px #ffb347,
+        0 0 25px rgba(255, 180, 70, 0.8);
 }
+
+
+/* Blow out */
 
 .candle:hover .flame {
     opacity: 0;
@@ -972,40 +967,33 @@ body {
     box-shadow: none;
 }
 
-@keyframes flicker {
-    0%, 100% {
-        transform:
-            scaleY(1)
-            rotate(0deg);
 
+/* -------------------------
+   Flame Animation
+   ------------------------- */
+
+@keyframes flicker {
+
+    0%, 100% {
+        transform: scaleY(1) rotate(0deg);
         opacity: 1;
     }
 
     25% {
-        transform:
-            scaleY(0.9)
-            rotate(2deg);
-
+        transform: scaleY(0.9) rotate(2deg);
         opacity: 0.9;
     }
 
     50% {
-        transform:
-            scaleY(1.1)
-            rotate(-2deg);
-
+        transform: scaleY(1.1) rotate(-2deg);
         opacity: 1;
     }
 
     75% {
-        transform:
-            scaleY(0.95)
-            rotate(1deg);
-
+        transform: scaleY(0.95) rotate(1deg);
         opacity: 0.95;
     }
 }
-
 
 /* =========================================
    BALLOONS
