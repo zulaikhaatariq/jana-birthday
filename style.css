@@ -2,22 +2,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;700&family=Great+Vibes&display=swap');
 
 :root {
-    --bg-dark: #19182f;
-    --bg-light: #49345f;
-    --primary-red: #d94f70;
-    --accent-yellow: #f6c9d4;
-    --text-light: #ffffff;
-    --envelope-body: #fff8f5;
-    --envelope-flap: #ead9df;
-    --letter-paper: #fff8f5;
-    --button-hover: #bd3f5d;
-    --cake-bottom: #8f4f65;
-    --cake-middle: #b86b83;
-    --cake-top: #d993a7;
+    --bg-dark: #24152f;
+    --bg-light: #5a304f;
+
+    --primary-red: #e75480;
+    --accent-yellow: #ffd1df;
+
+    --text-light: #fff8fc;
+
+    --envelope-body: #fff7fa;
+    --envelope-flap: #ead5df;
+
+    --letter-paper: #fff8fb;
+
+    --button-hover: #d63f6c;
+
+    --cake-bottom: #a34f6b;
+    --cake-middle: #c56f8b;
+    --cake-top: #e39bb1;
+
     --flame-color: #ffb347;
+
     --shadow-light: rgba(0,0,0,0.15);
     --shadow-medium: rgba(0,0,0,0.25);
-    --shadow-heavy: rgba(0,0,0,0.4);
+    --shadow-heavy: rgba(0,0,0,0.45);
 }
 
 * {
