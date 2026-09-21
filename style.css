@@ -1,32 +1,46 @@
-/* --- Global Styles & Setup --- */
+/* =========================================
+   BARBIE BIRTHDAY - GLOBAL STYLES
+   ========================================= */
+
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;700&family=Great+Vibes&display=swap');
 
 :root {
-    --bg-dark: #24152f;
-    --bg-light: #5a304f;
+    /* Barbie colors */
+    --bg-dark: #ff4f9a;
+    --bg-light: #ff9dcc;
 
-    --primary-red: #e75480;
-    --accent-yellow: #ffd1df;
+    --primary-red: #ff3f87;
+    --accent-yellow: #fff4fa;
 
-    --text-light: #fff8fc;
+    --text-light: #ffffff;
 
-    --envelope-body: #fff7fa;
-    --envelope-flap: #ead5df;
+    /* Envelope */
+    --envelope-body: #fffafd;
+    --envelope-flap: #ffd1e5;
 
-    --letter-paper: #fff8fb;
+    /* Letter */
+    --letter-paper: #fffafd;
 
-    --button-hover: #d63f6c;
+    /* Buttons */
+    --button-hover: #e91e72;
 
-    --cake-bottom: #a34f6b;
-    --cake-middle: #c56f8b;
-    --cake-top: #e39bb1;
+    /* Cake */
+    --cake-bottom: #ff3f87;
+    --cake-middle: #c77dff;
+    --cake-top: #ff9fc7;
 
-    --flame-color: #ffb347;
+    --flame-color: #ffd166;
 
-    --shadow-light: rgba(0,0,0,0.15);
-    --shadow-medium: rgba(0,0,0,0.25);
-    --shadow-heavy: rgba(0,0,0,0.45);
+    /* Shadows */
+    --shadow-light: rgba(255, 60, 140, 0.15);
+    --shadow-medium: rgba(150, 20, 90, 0.25);
+    --shadow-heavy: rgba(120, 10, 70, 0.35);
 }
+
+
+/* =========================================
+   RESET
+   ========================================= */
 
 * {
     margin: 0;
@@ -34,34 +48,72 @@
     box-sizing: border-box;
 }
 
+
+/* =========================================
+   BODY
+   ========================================= */
+
 body {
     margin: 0;
     padding: 0;
     min-height: 100vh;
 
     background:
-        radial-gradient(circle at 20% 20%, rgba(231, 84, 128, 0.22), transparent 28%),
-        radial-gradient(circle at 80% 30%, rgba(255, 180, 210, 0.16), transparent 25%),
-        radial-gradient(circle at 50% 90%, rgba(170, 80, 140, 0.20), transparent 30%),
-        linear-gradient(135deg, #1d1228 0%, #35203f 45%, #24152f 100%);
+        radial-gradient(
+            circle at 15% 15%,
+            rgba(255, 255, 255, 0.45),
+            transparent 20%
+        ),
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(255, 220, 240, 0.45),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 20% 85%,
+            rgba(255, 120, 190, 0.4),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(205, 130, 255, 0.3),
+            transparent 25%
+        ),
+        linear-gradient(
+            135deg,
+            #ff3f87 0%,
+            #ff62a5 35%,
+            #ff8fc4 65%,
+            #d98cff 100%
+        );
 
     color: var(--text-light);
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', Arial, sans-serif;
 
     overflow-x: hidden;
     position: relative;
 }
 
+
+/* =========================================
+   STEPS
+   ========================================= */
+
 .step {
     display: none;
     justify-content: center;
     align-items: center;
+
     width: 100%;
     height: 100%;
+
     position: absolute;
     top: 0;
     left: 0;
-    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+
+    transition:
+        opacity 0.5s ease-out,
+        transform 0.5s ease-out;
 }
 
 .step.active {
@@ -73,114 +125,233 @@ body {
 .step:not(.active) {
     opacity: 0;
     transform: scale(0.95);
-    pointer-events: none; /* Disable interaction when not active */
+    pointer-events: none;
 }
 
+
+/* =========================================
+   BUTTONS
+   ========================================= */
+
 .action-button {
-    padding: 12px 25px;
-    background-color: var(--primary-red);
-    color: var(--text-light);
-    border: none;
+    padding: 13px 28px;
+
+    background: linear-gradient(
+        135deg,
+        #ff3f87,
+        #ff69a8
+    );
+
+    color: white;
+
+    border: 3px solid rgba(255, 255, 255, 0.8);
     border-radius: 30px;
-    font-size: 1.1rem;
+
+    font-size: 1.05rem;
     font-weight: 700;
+
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 4px 10px var(--shadow-medium);
-    letter-spacing: 0.5px;
+
+    transition:
+        background 0.3s ease,
+        transform 0.2s ease,
+        box-shadow 0.3s ease;
+
+    box-shadow:
+        0 5px 15px rgba(180, 20, 100, 0.25),
+        0 0 15px rgba(255, 255, 255, 0.2);
+
+    letter-spacing: 0.3px;
 }
 
 .action-button:hover {
-    background-color: var(--button-hover);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px var(--shadow-heavy);
+    background: linear-gradient(
+        135deg,
+        #e91e72,
+        #ff4f98
+    );
+
+    transform: translateY(-3px) scale(1.03);
+
+    box-shadow:
+        0 8px 20px rgba(180, 20, 100, 0.35),
+        0 0 20px rgba(255, 255, 255, 0.35);
 }
 
-/* --- Step 1: Welcome Screen --- */
+
+/* =========================================
+   STEP 1 - WELCOME
+   ========================================= */
+
 .welcome-card {
     text-align: center;
-    padding: 40px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 15px 30px var(--shadow-heavy);
-    max-width: 500px;
+
+    padding: 45px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.25),
+            rgba(255, 180, 220, 0.2)
+        );
+
+    border-radius: 28px;
+
+    backdrop-filter: blur(12px);
+
+    border: 2px solid rgba(255, 255, 255, 0.45);
+
+    box-shadow:
+        0 20px 50px rgba(150, 20, 90, 0.3),
+        0 0 30px rgba(255, 255, 255, 0.15);
+
+    max-width: 550px;
+
     animation: fadeIn 1s ease-out;
 }
 
 .welcome-title {
     font-family: 'Great Vibes', cursive;
-    font-size: 3.5rem;
+
+    font-size: 3.7rem;
+
     margin-bottom: 20px;
-    color: var(--accent-yellow);
-    text-shadow: 2px 2px 5px var(--shadow-medium);
+
+    color: #ffffff;
+
+    text-shadow:
+        0 3px 0 #ff4f98,
+        0 0 15px rgba(255, 255, 255, 0.6);
 }
 
 .welcome-message {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
+
     margin-bottom: 30px;
-    line-height: 1.6;
-    color: var(--text-light);
+
+    line-height: 1.7;
+
+    color: white;
+
+    text-shadow:
+        0 1px 4px rgba(150, 20, 90, 0.25);
 }
 
-/* --- Step 2: Envelope --- */
+
+/* =========================================
+   STEP 2 - ENVELOPE
+   ========================================= */
+
 .envelope-container {
     text-align: center;
+
     animation: pulse 2s infinite;
+
     cursor: pointer;
 }
 
 .envelope {
     position: relative;
+
     width: 320px;
     height: 200px;
 }
 
 .envelope-back {
     position: absolute;
+
     width: 100%;
     height: 100%;
-    background-color: var(--envelope-body);
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #ffe7f2
+        );
+
     border-radius: 10px;
-    box-shadow: 0 8px 20px var(--shadow-medium);
+
+    box-shadow:
+        0 10px 25px rgba(150, 20, 90, 0.3);
 }
 
 .envelope-flap {
     position: absolute;
+
     width: 100%;
     height: 100px;
-    background-color: var(--envelope-flap);
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffd1e5,
+            #ffb4d2
+        );
+
     top: 0;
     left: 0;
-    clip-path: polygon(0 0, 100% 0, 50% 100%);
+
+    clip-path: polygon(
+        0 0,
+        100% 0,
+        50% 100%
+    );
+
     transform-origin: top;
-    transition: transform 0.5s ease-in-out;
-    z-index: 2; /* Ensure flap is above other parts */
+
+    transition:
+        transform 0.5s ease-in-out;
+
+    z-index: 2;
 }
 
 .envelope-front {
     position: absolute;
+
     width: 100%;
     height: 100%;
-    background-color: var(--envelope-body);
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #ffe8f3
+        );
+
     top: 0;
     left: 0;
-    clip-path: polygon(0 100%, 100% 100%, 100% 50%, 50% 100%, 0 50%);
+
+    clip-path: polygon(
+        0 100%,
+        100% 100%,
+        100% 50%,
+        50% 100%,
+        0 50%
+    );
+
     z-index: 1;
 }
 
 .envelope-seal {
     position: absolute;
+
     width: 40px;
     height: 40px;
-    /* Base64 for a simple heart SVG icon (red) */
-    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iI2U5NDU2MCI+PHBhdGggZD0iTTEyIDYuMjc1Yy01LjUwMy01LjgyOC0xNC40NDUgMi41NDctNi40NDUgOS42NDcgNC44MjcgNC44MjcgOS4xMjcgMi40NTcgMTIgMi41MjEgMi44NzMtLjA2NCA3LjE3MyAyLjMwMyAxMi0yLjUyMSAxMi03LjA4IDcuNjA4LTExLjQ4NSAyLjc1NS0xMS43OTJjLTcuOTk5LTcuMzk5LTMuMzk1LTkuNzE0LTYuNDQ1LTkuNjQ3eiIvPjwvc3ZnPg==');
+
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iI2ZmM2Y4NyI+PHBhdGggZD0iTTEyIDYuMjc1Yy01LjUwMy01LjgyOC0xNC40NDUgMi41NDctNi40NDUgOS42NDcgNC44MjcgNC44MjcgOS4xMjcgMi40NTcgMTIgMi41MjEgMi44NzMtLjA2NCA3LjE3MyAyLjMwMyAxMi0yLjUyMSAxMi03LjA4IDcuNjA4LTExLjQ4NSAyLjc1NS0xMS43OTJjLTcuOTk5LTcuMzk5LTMuMzk1LTkuNzE0LTYuNDQ1LTkuNjQ3eiIvPjwvc3ZnPg==');
+
     background-size: cover;
+
     top: 80px;
     left: 50%;
+
     transform: translateX(-50%);
+
     z-index: 3;
+
+    filter:
+        drop-shadow(0 3px 5px rgba(180, 20, 100, 0.25));
 }
 
 .envelope-container.open .envelope-flap {
@@ -189,28 +360,62 @@ body {
 
 .click-instruction {
     margin-top: 25px;
+
     font-size: 1.1rem;
-    color: var(--accent-yellow);
+
+    color: white;
+
     animation: bounce 1.5s infinite;
+
+    text-shadow:
+        0 2px 5px rgba(150, 20, 90, 0.25);
 }
 
+
+/* =========================================
+   ENVELOPE ANIMATIONS
+   ========================================= */
+
 @keyframes pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
 }
 
 @keyframes bounce {
-    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-    40% { transform: translateY(-10px); }
-    60% { transform: translateY(-5px); }
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-10px);
+    }
+
+    60% {
+        transform: translateY(-5px);
+    }
 }
 
-/* --- Step 3: Letter --- */
+
+/* =========================================
+   STEP 3 - LETTER
+   ========================================= */
+
 .letter-container {
     text-align: center;
+
     opacity: 0;
+
     transform: translateY(50px);
-    transition: opacity 0.5s 0.5s ease, transform 0.5s 0.5s ease;
+
+    transition:
+        opacity 0.5s 0.5s ease,
+        transform 0.5s 0.5s ease;
+
     max-width: 90vw;
 }
 
@@ -221,401 +426,924 @@ body {
 
 .letter {
     width: 400px;
-    max-width: 100%; /* Ensure it fits smaller screens */
-    background-color: var(--letter-paper);
-    color: var(--bg-dark);
+    max-width: 100%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #fff4fa
+        );
+
+    color: #d42d72;
+
     padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 10px 20px var(--shadow-medium);
+
+    border-radius: 18px;
+
+    border: 3px solid rgba(255, 120, 180, 0.35);
+
+    box-shadow:
+        0 15px 35px rgba(150, 20, 90, 0.3),
+        0 0 20px rgba(255, 255, 255, 0.3);
+
     line-height: 1.8;
 }
 
 .letter p {
     font-size: 1.1rem;
+
     margin-bottom: 20px;
 }
-.letter p:first-child { font-weight: bold; } /* Dearest [Name], */
-.letter p:last-of-type { margin-bottom: 0; }
+
+.letter p:first-child {
+    font-weight: bold;
+
+    color: #ff3f87;
+
+    font-size: 1.3rem;
+}
+
+.letter p:last-of-type {
+    margin-bottom: 0;
+}
 
 
-/* --- Step 4: Grand Celebration --- */
+/* =========================================
+   STEP 4 - CELEBRATION
+   ========================================= */
+
 .celebration-container {
     width: 100%;
     height: 100%;
+
     display: flex;
+
     justify-content: center;
     align-items: center;
+
     position: relative;
+
     overflow: hidden;
 }
 
 .celebration-card {
     text-align: center;
-    padding: 30px;
-    background: rgba(255, 255, 255, 0.15);
-    border-radius: 20px;
-    backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    box-shadow: 0 20px 40px var(--shadow-heavy);
+
+    padding: 35px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.32),
+            rgba(255, 160, 210, 0.28)
+        );
+
+    border-radius: 30px;
+
+    backdrop-filter: blur(18px);
+
+    border: 2px solid rgba(255, 255, 255, 0.5);
+
+    box-shadow:
+        0 20px 50px rgba(150, 20, 90, 0.28),
+        0 0 40px rgba(255, 255, 255, 0.18);
+
     max-width: 700px;
-    z-index: 10; /* Ensure card is above animations */
-    animation: popIn 1s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+
+    z-index: 10;
+
+    animation:
+        popIn 1s cubic-bezier(
+            0.68,
+            -0.55,
+            0.27,
+            1.55
+        );
 }
 
 @keyframes popIn {
-    0% { opacity: 0; transform: scale(0.5); }
-    100% { opacity: 1; transform: scale(1); }
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
+
+
+/* =========================================
+   CELEBRATION TEXT
+   ========================================= */
 
 .sub-greeting {
     font-size: 1.2rem;
+
     margin-bottom: 5px;
-    color: var(--accent-yellow);
+
+    color: white;
+
+    font-weight: 700;
+
+    text-shadow:
+        0 2px 5px rgba(180, 20, 100, 0.3);
 }
 
 .main-greeting {
     font-family: 'Poppins', sans-serif;
+
     font-size: 2.8rem;
+
     font-weight: 700;
-    white-space: nowrap; /* Prevent text wrap during typing */
-    overflow: hidden; /* Hide overflow for typewriter effect */
-    border-right: 3px solid var(--accent-yellow); /* Typewriter cursor */
-    animation: none; /* Handled by JS for typing */
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    border-right:
+        3px solid white;
+
+    color: white;
+
+    text-shadow:
+        0 3px 0 #ff4f98,
+        0 0 15px rgba(255, 255, 255, 0.5);
+
+    animation: none;
 }
 
-/* Typewriter cursor animation (only for final state after typing) */
 .main-greeting.typed {
-    border-right: 3px solid transparent; /* Hide cursor after typing */
-    animation: blinkCursor 0.75s step-end infinite;
+    border-right:
+        3px solid transparent;
+
+    animation:
+        blinkCursor 0.75s step-end infinite;
 }
 
 @keyframes blinkCursor {
-    from, to { border-color: transparent }
-    50% { border-color: var(--accent-yellow); }
-}
+    from, to {
+        border-color: transparent;
+    }
 
+    50% {
+        border-color: white;
+    }
+}
 
 .recipient-name {
     font-family: 'Pacifico', cursive;
+
     font-size: 4.5rem;
-    color: var(--accent-yellow);
-    margin: 5px 0 20px;
-    text-shadow: 3px 3px 8px var(--shadow-medium);
+
+    color: #fff1f8;
+
+    margin: 5px 0 5px;
+
+    text-shadow:
+        0 4px 0 #ff4f98,
+        0 0 20px rgba(255, 255, 255, 0.65);
+
     line-height: 1;
+}
+
+.mini-hearts {
+    color: #fff5fa;
+
+    font-size: 22px;
+
+    letter-spacing: 10px;
+
+    margin: 5px 0 15px;
+
+    text-shadow:
+        0 0 10px rgba(255, 255, 255, 0.7);
 }
 
 .final-wish {
     font-size: 1.15rem;
+
     margin-top: 25px;
+
     line-height: 1.6;
+
     max-width: 600px;
+
     margin-left: auto;
     margin-right: auto;
+
+    color: white;
+
+    text-shadow:
+        0 2px 5px rgba(160, 20, 90, 0.25);
 }
 
 .signature {
     font-family: 'Great Vibes', cursive;
+
     font-size: 2rem;
+
     margin-top: 30px;
-    color: var(--accent-yellow);
+
+    color: white;
+
     display: flex;
+
     justify-content: center;
     align-items: center;
+
+    text-shadow:
+        0 2px 8px rgba(180, 20, 100, 0.25);
 }
 
 .heart-icon {
     width: 25px;
     height: 25px;
+
     margin-left: 10px;
-    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iI2U5NDU2MCI+PHBhdGggZD0iTTEyIDYuMjc1Yy01LjUwMy01LjgyOC0xNC40NDUgMi41NDctNi40NDUgOS42NDcgNC44MjcgNC44MjcgOS4xMjcgMi40NTcgMTIgMi41MjEgMi44NzMtLjA2NCA3LjE3MyAyLjMwMyAxMi0yLjUyMSAxMi03LjA4IDcuNjA4LTExLjQ4NSAyLjc1NS0xMS43OTJjLTcuOTk5LTcuMzk5LTMuMzk1LTkuNzE0LTYuNDQ1LTkuNjQ3eiIvPjwvc3ZnPg==');
+
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iI2ZmM2Y4NyI+PHBhdGggZD0iTTEyIDYuMjc1Yy01LjUwMy01LjgyOC0xNC40NDUgMi41NDctNi40NDUgOS42NDcgNC44MjcgNC44MjcgOS4xMjcgMi40NTcgMTIgMi41MjEgMi44NzMtLjA2NCA3LjE3MyAyLjMwMyAxMi0yLjUyMSAxMi03LjA4IDcuNjA4LTExLjQ4NSAyLjc1NS0xMS43OTJjLTcuOTk5LTcuMzk5LTMuMzk1LTkuNzE0LTYuNDQ1LTkuNjQ3eiIvPjwvc3ZnPg==');
+
     background-size: contain;
+
     background-repeat: no-repeat;
+
     vertical-align: middle;
+
+    filter:
+        drop-shadow(0 2px 5px rgba(255, 255, 255, 0.4));
 }
 
-/* --- Cake Styling --- */
+
+/* =========================================
+   CAKE
+   ========================================= */
+
 .cake-container {
     margin: 30px auto;
 }
 
 .cake {
     position: relative;
-    width: 280px; /* Slightly larger cake */
+
+    width: 280px;
     height: 280px;
-    margin: 0 auto; /* Center the cake */
+
+    margin: 0 auto;
 }
+
+
+/* Plate */
 
 .plate {
     width: 300px;
     height: 25px;
-    background-color: #ccc;
+
+    background:
+        linear-gradient(
+            180deg,
+            #ffffff,
+            #ffd5e7
+        );
+
     position: absolute;
+
     bottom: 40px;
     left: 50%;
+
     transform: translateX(-50%);
+
     border-radius: 50%;
-    box-shadow: 0 5px 10px var(--shadow-medium);
+
+    box-shadow:
+        0 5px 15px rgba(180, 30, 100, 0.25);
 }
+
+
+/* Cake layers */
 
 .layer {
     position: absolute;
-    width: 280px;
-    height: 60px; /* Taller layers */
-    background-color: var(--cake-bottom);
-    border-radius: 50% / 25%;
+
+    height: 60px;
+
+    border-radius:
+        50% / 25%;
+
     left: 50%;
+
     transform: translateX(-50%);
+
+    box-shadow:
+        inset 0 -5px 8px rgba(150, 20, 90, 0.12),
+        0 4px 8px rgba(150, 20, 90, 0.12);
 }
-.layer-bottom { bottom: 45px; background-color: var(--cake-bottom); width: 280px; }
-.layer-middle { bottom: 85px; background-color: var(--cake-middle); width: 260px; }
-.layer-top { bottom: 125px; background-color: var(--cake-top); width: 240px; }
+
+
+/* Bottom - hot pink */
+
+.layer-bottom {
+    bottom: 45px;
+
+    width: 280px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff2f7d,
+            #ff4f98,
+            #ff75ad
+        );
+}
+
+
+/* Middle - purple/pink */
+
+.layer-middle {
+    bottom: 85px;
+
+    width: 260px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #c56cff,
+            #e18cff,
+            #ff8fbd
+        );
+}
+
+
+/* Top - light Barbie pink */
+
+.layer-top {
+    bottom: 125px;
+
+    width: 240px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ffb1d1,
+            #ffd0e2,
+            #ff9fc7
+        );
+}
+
+
+/* =========================================
+   CAKE ICING
+   ========================================= */
 
 .icing {
     position: absolute;
+
     width: 240px;
-    height: 35px; /* Thicker icing */
-    background-color: white;
+    height: 35px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ffffff,
+            #fff3f9,
+            #ffffff
+        );
+
     bottom: 165px;
+
     border-radius: 50% / 25%;
+
     left: 50%;
+
     transform: translateX(-50%);
-    box-shadow: inset 0 -3px 5px rgba(0,0,0,0.1);
+
+    box-shadow:
+        inset 0 -3px 5px rgba(255, 100, 170, 0.15),
+        0 3px 10px rgba(255, 255, 255, 0.35);
 }
+
+
+/* Colored icing sprinkles */
+
+.icing::before {
+    content: '';
+
+    position: absolute;
+
+    left: 25px;
+    right: 25px;
+
+    top: 13px;
+
+    height: 6px;
+
+    background:
+        repeating-linear-gradient(
+            90deg,
+            #ff4f98 0 8px,
+            transparent 8px 14px,
+            #c77dff 14px 22px,
+            transparent 22px 28px,
+            #ffd166 28px 36px,
+            transparent 36px 42px,
+            #5eead4 42px 50px,
+            transparent 50px 58px
+        );
+
+    border-radius: 10px;
+
+    opacity: 0.9;
+}
+
+
+/* =========================================
+   CAKE DRIPS
+   ========================================= */
 
 .drip {
     position: absolute;
-    width: 25px; /* Wider drips */
-    height: 35px; /* Longer drips */
+
+    width: 25px;
+    height: 35px;
+
     background: white;
+
     border-radius: 50%;
+
     top: -15px;
 }
-.drip1 { left: 40px; display:none;}
-.drip2 { left: 127px; height: 45px; } /* Slightly longer middle drip */
-.drip3 { left: 210px; display: none;}
+
+.drip1 {
+    left: 40px;
+
+    display: block;
+
+    height: 28px;
+}
+
+.drip2 {
+    left: 127px;
+
+    height: 45px;
+}
+
+.drip3 {
+    left: 210px;
+
+    display: block;
+
+    height: 30px;
+}
+
+
+/* =========================================
+   CANDLE
+   ========================================= */
 
 .candle {
     position: absolute;
-    width: 12px; /* Thicker candle */
-    height: 60px; /* Taller candle */
-    background-color: var(--primary-red);
+
+    width: 14px;
+    height: 60px;
+
+    background:
+        repeating-linear-gradient(
+            135deg,
+            #ff3f87 0 8px,
+            #ffb4d5 8px 16px
+        );
+
     bottom: 190px;
+
     left: 50%;
+
     transform: translateX(-50%);
+
     border-radius: 5px 5px 0 0;
-    box-shadow: inset 0 -2px 5px rgba(0,0,0,0.2);
+
+    box-shadow:
+        0 0 10px rgba(255, 80, 160, 0.4);
 }
+
+
+/* =========================================
+   FLAME
+   ========================================= */
 
 .flame {
     position: absolute;
+
     width: 12px;
-    height: 18px; /* Taller flame */
-    background-color: var(--flame-color);
+    height: 18px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #fff4b0,
+            #ffd166,
+            #ff9f43
+        );
+
     top: -18px;
-    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-    animation: flicker 1s infinite;
-    box-shadow: 0 0 8px var(--flame-color), 0 0 15px var(--flame-color), 0 0 25px var(--flame-color);
-    transition: all 0.2s ease-out; /* For hover effect */
+
+    border-radius:
+        50% 50% 50% 50% /
+        60% 60% 40% 40%;
+
+    animation:
+        flicker 1s infinite;
+
+    box-shadow:
+        0 0 8px #ffd166,
+        0 0 15px #ffd166,
+        0 0 25px #ff9f43;
 }
 
-/* Candle blow-out effect */
 .candle:hover .flame {
     opacity: 0;
-    transform: scale(0.2) translateY(5px);
+
+    transform:
+        scale(0.2)
+        translateY(5px);
+
     box-shadow: none;
 }
 
 @keyframes flicker {
-    0%, 100% { transform: scaleY(1) rotate(0deg); opacity: 1; }
-    25% { transform: scaleY(0.9) rotate(2deg); opacity: 0.9; }
-    50% { transform: scaleY(1.1) rotate(-2deg); opacity: 1; }
-    75% { transform: scaleY(0.95) rotate(1deg); opacity: 0.95; }
+    0%, 100% {
+        transform:
+            scaleY(1)
+            rotate(0deg);
+
+        opacity: 1;
+    }
+
+    25% {
+        transform:
+            scaleY(0.9)
+            rotate(2deg);
+
+        opacity: 0.9;
+    }
+
+    50% {
+        transform:
+            scaleY(1.1)
+            rotate(-2deg);
+
+        opacity: 1;
+    }
+
+    75% {
+        transform:
+            scaleY(0.95)
+            rotate(1deg);
+
+        opacity: 0.95;
+    }
 }
 
 
-/* --- Balloons Animation --- */
+/* =========================================
+   BALLOONS
+   ========================================= */
+
 .balloons-container {
     position: absolute;
+
     top: 0;
     left: 0;
+
     width: 100%;
     height: 100%;
-    pointer-events: none; /* Allow clicks on elements beneath */
+
+    pointer-events: none;
 }
 
 .balloon {
     position: absolute;
-    width: 60px; /* Larger balloons */
+
+    width: 60px;
     height: 80px;
-    background-color: var(--primary-red);
-    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff3f87,
+            #ff8fbd
+        );
+
+    border-radius:
+        50% 50% 50% 50% /
+        60% 60% 40% 40%;
+
     bottom: -100px;
-    opacity: 0.7;
-    animation: rise 12s linear forwards; /* 'forwards' to stay at end state */
-    z-index: 5; /* Below card, above background */
+
+    opacity: 0.85;
+
+    animation:
+        rise 12s linear forwards;
+
+    z-index: 5;
+
+    box-shadow:
+        inset -8px -8px 15px rgba(180, 20, 90, 0.12),
+        0 0 12px rgba(255, 255, 255, 0.15);
 }
 
-.balloon::before { /* Balloon knot */
+.balloon:nth-child(2n) {
+    background:
+        linear-gradient(
+            135deg,
+            #c77dff,
+            #e5b5ff
+        );
+}
+
+.balloon:nth-child(3n) {
+    background:
+        linear-gradient(
+            135deg,
+            #ffd166,
+            #ffe9a6
+        );
+}
+
+.balloon:nth-child(4n) {
+    background:
+        linear-gradient(
+            135deg,
+            #5eead4,
+            #a7f3e8
+        );
+}
+
+.balloon::before {
     content: '';
+
     position: absolute;
+
     width: 10px;
     height: 10px;
+
     background-color: inherit;
+
     bottom: -5px;
     left: 50%;
-    transform: translateX(-50%) rotate(45deg);
-    border-radius: 0 50% 50% 50%;
+
+    transform:
+        translateX(-50%)
+        rotate(45deg);
+
+    border-radius:
+        0 50% 50% 50%;
 }
 
-.balloon::after { /* Balloon string */
+.balloon::after {
     content: '';
+
     position: absolute;
+
     width: 2px;
     height: 70px;
-    background-color: var(--text-light);
+
+    background-color: white;
+
     left: 50%;
     top: 80px;
-    transform: translateX(-50%);
+
+    transform:
+        translateX(-50%);
+
     opacity: 0.8;
 }
 
 @keyframes rise {
-    0% { transform: translateY(0) scale(0.8); opacity: 0; }
-    5% { opacity: 0.7; transform: translateY(0) scale(1); }
-    100% { transform: translateY(-120vh) scale(1); opacity: 0; }
+    0% {
+        transform:
+            translateY(0)
+            scale(0.8);
+
+        opacity: 0;
+    }
+
+    5% {
+        opacity: 0.85;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+    100% {
+        transform:
+            translateY(-120vh)
+            scale(1);
+
+        opacity: 0;
+    }
 }
 
 
-/* --- Confetti Cannon --- */
+/* =========================================
+   CONFETTI
+   ========================================= */
+
 .confetti-cannon-container {
     position: absolute;
+
     top: 0;
     left: 0;
+
     width: 100%;
     height: 100%;
+
     pointer-events: none;
-    overflow: hidden; /* Contains confetti */
-    z-index: 8; /* Above balloons, below card */
+
+    overflow: hidden;
+
+    z-index: 8;
 }
 
 .confetti {
     position: absolute;
-    width: 8px;
-    height: 8px;
-    background-color: var(--primary-red); /* Default, overridden by JS */
+
+    width: 9px;
+    height: 9px;
+
+    background-color: var(--primary-red);
+
     opacity: 0;
-    animation: confettiFall 3s ease-out forwards;
+
+    animation:
+        confettiFall 3s ease-out forwards;
+
     transform-origin: center;
 }
 
 @keyframes confettiFall {
-    0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
-    100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+    0% {
+        transform:
+            translateY(-10vh)
+            rotate(0deg);
+
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translateY(100vh)
+            rotate(720deg);
+
+        opacity: 0;
+    }
 }
 
-/* --- Fireworks Animation (Subtle Background) --- */
+
+/* =========================================
+   FIREWORKS
+   ========================================= */
+
 .fireworks-container {
     position: absolute;
+
     top: 0;
     left: 0;
+
     width: 100%;
     height: 100%;
+
     pointer-events: none;
+
     overflow: hidden;
-    z-index: 1; /* Below everything else */
+
+    z-index: 1;
 }
 
 .firework {
     position: absolute;
-    width: 2px;
-    height: 2px;
-    background-color: var(--accent-yellow);
+
+    width: 3px;
+    height: 3px;
+
+    background-color: #fff4a8;
+
     border-radius: 50%;
-    box-shadow: 0 0 5px var(--accent-yellow);
-    animation: launch 4s ease-out forwards;
+
+    box-shadow:
+        0 0 5px #fff4a8,
+        0 0 10px #ff8fc4;
+
+    animation:
+        launch 4s ease-out forwards;
+
     opacity: 0;
 }
 
 .firework::after {
     content: '';
+
     position: absolute;
+
     width: 100%;
     height: 100%;
+
     background-color: inherit;
+
     border-radius: 50%;
+
     transform: scale(0);
-    animation: explode 0.8s ease-out 3s forwards; /* Starts after launch */
+
+    animation:
+        explode 0.8s ease-out 3s forwards;
+
     opacity: 0;
 }
 
 @keyframes launch {
-    0% { transform: translateY(0) translateX(0); opacity: 0; }
-    10% { opacity: 1; }
-    70% { transform: translateY(-70vh) translateX(50px); opacity: 1; }
-    100% { transform: translateY(-80vh) translateX(60px); opacity: 0; }
+    0% {
+        transform:
+            translateY(0)
+            translateX(0);
+
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    70% {
+        transform:
+            translateY(-70vh)
+            translateX(50px);
+
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translateY(-80vh)
+            translateX(60px);
+
+        opacity: 0;
+    }
 }
 
 @keyframes explode {
-    0% { transform: scale(0); opacity: 1; }
-    100% { transform: scale(20); opacity: 0; }
+    0% {
+        transform: scale(0);
+
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(20);
+
+        opacity: 0;
+    }
 }
 
 
-/* --- Responsive Adjustments --- */
-@media (max-width: 768px) {
-    .welcome-title { font-size: 2.5rem; }
-    .welcome-message { font-size: 1rem; }
-    .letter p { font-size: 1rem; }
-    .main-greeting { font-size: 2rem; }
-    .recipient-name { font-size: 3.5rem; }
-    .final-wish { font-size: 1rem; }
-    .signature { font-size: 1.5rem; }
-    .cake { transform: scale(0.8); }
-    .letter { width: 90%; padding: 20px; }
-    .envelope { transform: scale(0.8); } /* Scale down envelope */
-}
-
-@media (max-width: 480px) {
-    .welcome-title { font-size: 2rem; }
-    .welcome-message { font-size: 0.9rem; }
-    .action-button { padding: 10px 20px; font-size: 1rem; }
-    .main-greeting { font-size: 1.8rem; }
-    .recipient-name { font-size: 2.8rem; }
-    .final-wish { font-size: 0.9rem; }
-    .signature { font-size: 1.2rem; }
-    .cake { transform: scale(0.7); }
-    .envelope { transform: scale(0.7); } /* Even smaller envelope */
-}
-
-/* =========================
+/* =========================================
    FLOATING HEARTS
-   ========================= */
+   ========================================= */
 
 .floating-hearts {
     position: fixed;
+
     inset: 0;
+
     pointer-events: none;
+
     overflow: hidden;
+
     z-index: 2;
 }
 
 .floating-hearts span {
     position: absolute;
+
     bottom: -60px;
 
-    color: #ff8fb1;
+    color: #ffb5d5;
+
     font-size: 28px;
 
     opacity: 0;
 
-    animation: floatingHeart 10s linear infinite;
+    animation:
+        floatingHeart 10s linear infinite;
 
     text-shadow:
-        0 0 8px rgba(255, 143, 177, 0.7),
-        0 0 18px rgba(255, 143, 177, 0.35);
+        0 0 8px rgba(255, 255, 255, 0.8),
+        0 0 18px rgba(255, 120, 190, 0.5);
 }
 
-/* verschiedene Positionen */
+
+/* Different heart sizes */
 
 .floating-hearts span:nth-child(1) {
     left: 5%;
@@ -691,7 +1419,10 @@ body {
 
 @keyframes floatingHeart {
     0% {
-        transform: translateY(0) rotate(-10deg);
+        transform:
+            translateY(0)
+            rotate(-10deg);
+
         opacity: 0;
     }
 
@@ -700,7 +1431,11 @@ body {
     }
 
     50% {
-        transform: translateY(-50vh) translateX(25px) rotate(10deg);
+        transform:
+            translateY(-50vh)
+            translateX(25px)
+            rotate(10deg);
+
         opacity: 0.7;
     }
 
@@ -709,15 +1444,125 @@ body {
     }
 
     100% {
-        transform: translateY(-115vh) translateX(-20px) rotate(-10deg);
+        transform:
+            translateY(-115vh)
+            translateX(-20px)
+            rotate(-10deg);
+
         opacity: 0;
     }
 }
 
-.mini-hearts {
-    color: #ff9fbc;
-    font-size: 22px;
-    letter-spacing: 10px;
-    margin: 5px 0 15px;
-    text-shadow: 0 0 10px rgba(255, 159, 188, 0.6);
+
+/* =========================================
+   RESPONSIVE - TABLET
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    .welcome-title {
+        font-size: 2.5rem;
+    }
+
+    .welcome-message {
+        font-size: 1rem;
+    }
+
+    .letter p {
+        font-size: 1rem;
+    }
+
+    .main-greeting {
+        font-size: 2rem;
+    }
+
+    .recipient-name {
+        font-size: 3.5rem;
+    }
+
+    .final-wish {
+        font-size: 1rem;
+    }
+
+    .signature {
+        font-size: 1.5rem;
+    }
+
+    .cake {
+        transform: scale(0.8);
+    }
+
+    .letter {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .envelope {
+        transform: scale(0.8);
+    }
+
+    .celebration-card {
+        width: 92%;
+        padding: 25px 18px;
+    }
+}
+
+
+/* =========================================
+   RESPONSIVE - PHONE
+   ========================================= */
+
+@media (max-width: 480px) {
+
+    .welcome-card {
+        width: 90%;
+        padding: 30px 20px;
+    }
+
+    .welcome-title {
+        font-size: 2rem;
+    }
+
+    .welcome-message {
+        font-size: 0.9rem;
+    }
+
+    .action-button {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+
+    .main-greeting {
+        font-size: 1.8rem;
+    }
+
+    .recipient-name {
+        font-size: 2.8rem;
+    }
+
+    .final-wish {
+        font-size: 0.9rem;
+    }
+
+    .signature {
+        font-size: 1.2rem;
+    }
+
+    .cake {
+        transform: scale(0.7);
+    }
+
+    .envelope {
+        transform: scale(0.7);
+    }
+
+    .celebration-card {
+        width: 94%;
+        padding: 20px 12px;
+    }
+
+    .mini-hearts {
+        font-size: 18px;
+        letter-spacing: 6px;
+    }
 }
