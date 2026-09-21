@@ -713,3 +713,11 @@ body {
         opacity: 0;
     }
 }
+
+.mini-hearts {
+    color: #ff9fbc;
+    font-size: 22px;
+    letter-spacing: 10px;
+    margin: 5px 0 15px;
+    text-shadow: 0 0 10px rgba(255, 159, 188, 0.6);
+}
