@@ -1555,3 +1555,82 @@ body {
         letter-spacing: 6px;
     }
 }
+
+/* =========================================
+   FIX: BIRTHDAY PAGE MUST FIT / SCROLL
+   ========================================= */
+
+#step4 {
+    height: 100vh;
+    min-height: 100vh;
+
+    align-items: flex-start;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    padding: 35px 0;
+}
+
+#step4 .celebration-container {
+    min-height: calc(100vh - 70px);
+    height: auto;
+
+    align-items: flex-start;
+
+    padding: 20px 0 40px;
+}
+
+#step4 .celebration-card {
+    margin: 0 auto;
+}
+
+
+/* Make the cake slightly more compact */
+
+#step4 .cake-container {
+    margin: 15px auto;
+}
+
+#step4 .cake {
+    transform: scale(0.85);
+    transform-origin: center;
+}
+
+
+/* Better spacing on smaller screens */
+
+@media (max-width: 768px) {
+
+    #step4 {
+        padding: 20px 0;
+    }
+
+    #step4 .celebration-container {
+        min-height: calc(100vh - 40px);
+        padding: 10px 0 30px;
+    }
+
+    #step4 .cake {
+        transform: scale(0.7);
+    }
+
+    #step4 .celebration-card {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    #step4 {
+        padding: 15px 0;
+    }
+
+    #step4 .cake {
+        transform: scale(0.62);
+    }
+
+    #step4 .celebration-container {
+        padding-bottom: 20px;
+    }
+}
